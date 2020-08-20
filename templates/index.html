@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <title>Carsify-The Car Price Predictor</title>
+    <style>
+        #main_image{
+            
+            height:250px;
+            width: 250px;
+        }
+        #form_table {
+                    border-radius: 25px;
+                    background-color:aliceblue;   
+                    padding: 20px;
+                    width: 500px;
+        
+        
+                }
+        
+        #sub{
+                    color: azure;
+                    background-color: crimson;
+                    margin-left: 70% ;
+                    text-decoration-style: solid;
+                    border-color:crimson;
+                    height: 50px;
+                    width: 150px;
+                    margin-top: 20%;
+        
+                }
+        </style>
+
+</head>
+
+<body>
+    <center>
+        <img src= "{{ url_for('static',filename='images/logo.png' ) }}"id='main_image' />
+
+        <section>
+            <div>
+            <h3>{{ prediction_text }}<h3>
+            <form action="{{url_for('predict')}}" method='POST'>
+                <table id="form_table">
+                    <tbody>
+                        <tr>
+                            <th colspan="2"><h2>Predict Your Car Price</h2></th>
+                        </tr>
+                        <tr>
+                            <td>
+                                <p>Purchased Year <font color="red">*</font></p>
+                            </td>
+                            <td id="td1">
+                                <input id="first" name="Year" type="number " placeholder="Enter Car Purchased Year">
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>
+                               <p>Showroom Price(In lakhs) <font color="red">*</font></p> 
+                            </td>
+                            <td id="td2">
+                                <input id="second" name="Present_Price" required="required"
+                                    placeholder='Enter the Showroom Price'>
+
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>
+                                <p>Kilometers Driven <font color="red">*</font></p>
+                            </td>
+                            <td id="td3">
+                                <input id="third" name="Kms_Driven" required="required"
+                                    placeholder='Number of Kilometers Drived'>
+
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>
+                               <p> No of Owners <font color="red">*</font></p>
+                            </td>
+                            <td nowrap>
+                                <input type="CHECKBOX" value="0" name="Owner" id="forth">0
+                                <input type="CHECKBOX"value="1"name="Owner"id="forth">1
+                                <input type="CHECKBOX"value= "3"name="Owner"id="forth">3
+                                
+                            </td>
+                        </tr>
+                        <tr>  
+                            <td>
+                                <p>Fuel Type <font color="red">*</font></p>
+                            <td nowrap>
+                                <input type="CHECKBOX" value="Petrol" name="Fuel_Type_Petrol"id="fuel">Petrol
+                                <input type="CHECKBOX"value="Diesel"name="Fuel_Type_Petrol"id="fuel">Diesel
+                                <input type="CHECKBOX"value= "CNG"name="Fuel_Type_Petrol"id="fuel">CNG
+                                
+                            </td>
+                        </tr> 
+                        <tr>
+                            <td>
+                               <p> Dealership Type <font color="red">*</font></p>
+                            <td nowrap>
+                                <input type="CHECKBOX" value="Dealer" name="Seller_Type_Individual" id="resea">Dealer
+                                <input type="CHECKBOX"value="Individual"name="Seller_Type_Individual" id="resea">Individual
+                            </td>  
+                        </tr> 
+                        <tr>
+                            <td>
+                               <p> Transmission Type <font color="red">*</font></p>
+                            <td nowrap>
+                                <input type="CHECKBOX" value="Mannual" name="Transmission_Mannual"id="research">Mannual
+                                <input type="CHECKBOX"value="Automatic"name="Transmission_Mannual" id="research">Automatic
+                            </td> 
+                        </tr>   
+                        <tr>
+                            <td>
+                                <input type="Submit" name="Register" id="sub">
+                            </td>
+                        </tr>
+                        
+                    </tbody>
+                </table>
+            </form>
+        </div>
+        </section>
+    </center>
+</body>
+</html>
